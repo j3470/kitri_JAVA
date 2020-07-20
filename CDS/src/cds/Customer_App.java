@@ -62,47 +62,14 @@ public class Customer_App {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.getContentPane().setLayout(null);
 		ImagePanel welcomePanel = new ImagePanel(
 				new ImageIcon("C:/Users/KITRI/eclipse-workspace/CDS/image/login.png").getImage());
+		frame.setSize(welcomePanel.getWidth(), welcomePanel.getHeight());
 		// welcomePanel.setBounds(0, 0, 1093, 659);
 		ImagePanel joinpanel = new ImagePanel(
 				new ImageIcon("C:/Users/KITRI/eclipse-workspace/CDS/image/join.png").getImage());
-		frame.setSize(welcomePanel.getWidth(), welcomePanel.getHeight());
-		frame.getContentPane().add(welcomePanel);
-		welcomePanel.setLayout(null);
-
-		ID = new JTextField();
-		ID.setBounds(567, 274, 283, 64);
-		ID.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		ID.setToolTipText("");
-		welcomePanel.add(ID);
-		ID.setColumns(10);
-		ID.setBorder(new LineBorder(Color.white, 1));
-
-		PW = new JPasswordField();
-		PW.setBounds(567, 370, 283, 64);
-		PW.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-		PW.setToolTipText("");
-		welcomePanel.add(PW);
-		PW.setBorder(new LineBorder(Color.white, 1));
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setBounds(704, 494, 136, 53);
-		welcomePanel.add(btnNewButton);
-
-		JButton btnNewButton_3 = new JButton("");
-		btnNewButton_3.setContentAreaFilled(false);
-		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				joinpanel.setVisible(true);
-				welcomePanel.setVisible(false);
-			}
-		});
-		btnNewButton_3.setFont(new Font("MV Boli", Font.PLAIN, 20));
-		btnNewButton_3.setBounds(510, 494, 136, 53);
-		welcomePanel.add(btnNewButton_3);
 
 		frame.setSize(joinpanel.getWidth(), joinpanel.getHeight());
 		frame.getContentPane().add(joinpanel);
@@ -145,6 +112,52 @@ public class Customer_App {
 		btnNewButton_2.setFont(new Font("굴림", Font.PLAIN, 20));
 		btnNewButton_2.setBounds(1024, 641, 127, 33);
 		joinpanel.add(btnNewButton_2);
+
+		JButton btnNewButton_5 = new JButton("");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				joinpanel.setVisible(false);
+				welcomePanel.setVisible(true);
+			}
+		});
+		btnNewButton_5.setIcon(new ImageIcon("C:\\Users\\KITRI\\eclipse-workspace\\CDS\\image\\backicon.PNG"));
+		btnNewButton_5.setBounds(93, 32, 77, 61);
+		btnNewButton_5.setBorder(new LineBorder(Color.white, 1));
+		joinpanel.add(btnNewButton_5);
+		frame.getContentPane().add(welcomePanel);
+		welcomePanel.setLayout(null);
+
+		ID = new JTextField();
+		ID.setBounds(567, 274, 283, 64);
+		ID.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		ID.setToolTipText("");
+		welcomePanel.add(ID);
+		ID.setColumns(10);
+		ID.setBorder(new LineBorder(Color.white, 1));
+
+		PW = new JPasswordField();
+		PW.setBounds(567, 370, 283, 64);
+		PW.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+		PW.setToolTipText("");
+		welcomePanel.add(PW);
+		PW.setBorder(new LineBorder(Color.white, 1));
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setBounds(704, 494, 136, 53);
+		welcomePanel.add(btnNewButton);
+
+		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.setContentAreaFilled(false);
+		btnNewButton_3.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				joinpanel.setVisible(true);
+				welcomePanel.setVisible(false);
+			}
+		});
+		btnNewButton_3.setFont(new Font("MV Boli", Font.PLAIN, 20));
+		btnNewButton_3.setBounds(510, 494, 136, 53);
+		welcomePanel.add(btnNewButton_3);
 
 		JPanel mainpanel = new JPanel();
 		mainpanel.setBackground(Color.WHITE);
@@ -326,7 +339,6 @@ public class Customer_App {
 		});
 		frame.setJMenuBar(menuBar());
 		frame.setLocationRelativeTo(null);
-		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	}
