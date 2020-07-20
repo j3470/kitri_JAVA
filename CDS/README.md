@@ -1,2 +1,1 @@
-"# kitri_JAVA" 
-"# kitri_JAVA" 
+이공계 62기 미니 프로젝트
