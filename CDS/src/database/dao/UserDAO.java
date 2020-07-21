@@ -66,6 +66,23 @@ public class UserDAO {
 		}
 		return false;
 	}
+	public Boolean checkUser(String ID){
+		try {
+			Connection con = dbConnector.getConnection();
+			String query = "SELECT COUNT(*) AS total FROM " + tableName + " WHERE ID='"+ID+"'";
+			PreparedStatement statement = con.prepareStatement(query);
+			ResultSet results = statement.executeQuery();
+			results.next();
+			int count = results.getInt("total");
+			if (count > 0) {
+				System.out.println("test");
+				return true;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	public Boolean createUser(String id, String password, String type, String name, String email, String phone) {
 		try {

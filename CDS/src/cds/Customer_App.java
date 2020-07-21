@@ -64,78 +64,16 @@ public class Customer_App {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.getContentPane().setLayout(null);
-		ImagePanel joinpanel = new ImagePanel(
-				new ImageIcon("C:\\Users\\KITRI\\git\\repository\\CDS\\image\\join.png").getImage());
 		ImagePanel mainpanel = new ImagePanel(
 				new ImageIcon("C:\\Users\\KITRI\\git\\repository\\CDS\\image\\03_main.png").getImage());
+		ImagePanel joinpanel = new ImagePanel(
+				new ImageIcon("C:\\Users\\KITRI\\git\\repository\\CDS\\image\\join.png").getImage());
 		joinpanel.setLocation(0, 0);
 
 		// welcomePanel.setBounds(0, 0, 1093, 659);
 
 		frame.setSize(joinpanel.getWidth(), joinpanel.getHeight());
-		ImagePanel welcomePanel = new ImagePanel(
-				new ImageIcon("C:\\Users\\KITRI\\git\\repository\\CDS\\image\\login.png").getImage());
-		frame.setSize(welcomePanel.getWidth(), welcomePanel.getHeight());
-		frame.getContentPane().add(welcomePanel);
-		welcomePanel.setLayout(null);
-		
-				ID = new JTextField();
-				ID.setBounds(567, 274, 283, 64);
-				ID.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-				ID.setToolTipText("");
-				welcomePanel.add(ID);
-				ID.setColumns(10);
-				ID.setBorder(new LineBorder(Color.white, 1));
-				
-						PW = new JPasswordField();
-						PW.setBounds(567, 370, 283, 64);
-						PW.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
-						PW.setToolTipText("");
-						welcomePanel.add(PW);
-						PW.setBorder(new LineBorder(Color.white, 1));
-						JButton btnNewButton = new JButton("");
-						btnNewButton.setContentAreaFilled(false);
-						btnNewButton.setBounds(704, 494, 136, 53);
-						welcomePanel.add(btnNewButton);
-						
-								JButton btnNewButton_3 = new JButton("");
-								btnNewButton_3.setContentAreaFilled(false);
-								btnNewButton_3.setBackground(Color.LIGHT_GRAY);
-								btnNewButton_3.addActionListener(new ActionListener() {
-									public void actionPerformed(ActionEvent e) {
-										joinpanel.setVisible(true);
-										welcomePanel.setVisible(false);
-									}
-								});
-								btnNewButton_3.setFont(new Font("MV Boli", Font.PLAIN, 20));
-								btnNewButton_3.setBounds(510, 494, 136, 53);
-								welcomePanel.add(btnNewButton_3);
-								
-										// JPanel mainpanel = new JPanel();
-										// mainpanel.setBounds(0, 0, 10, 10);
-										//frame.getContentPane().add(mainpanel);
-										btnNewButton.addActionListener(new ActionListener() {
-											@Override
-											public void actionPerformed(ActionEvent e) {
-												// TODO Auto-generated method stub
-												String name = ID.getText();
-												StringBuilder sbf = new StringBuilder("");
-												char[] pass = PW.getPassword();
-												sbf.append(pass); // char[] -> String
-								
-												if (User.CheckUser(name, sbf.toString())) {
-													JOptionPane.showMessageDialog(null, "success");
-													welcomePanel.setVisible(false);
-													joinpanel.setVisible(false);
-													mainpanel.setVisible(true);
-												} else {
-													JOptionPane.showMessageDialog(null, "fail");
-												}
-								
-											}
-										});
 		frame.getContentPane().add(joinpanel);
-		frame.getContentPane().add(mainpanel);
 		joinpanel.setLayout(null);
 
 		user = new JTextField();
@@ -230,6 +168,77 @@ public class Customer_App {
 		backBtn.setBounds(93, 32, 77, 61);
 		backBtn.setBorder(new LineBorder(Color.white, 1));
 		joinpanel.add(backBtn);
+
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		btnNewButton_1.setBounds(1043, 202, 119, 46);
+		joinpanel.add(btnNewButton_1);
+		frame.getContentPane().add(mainpanel);
+		ImagePanel welcomePanel = new ImagePanel(
+				new ImageIcon("C:\\Users\\KITRI\\git\\repository\\CDS\\image\\login.png").getImage());
+		frame.setSize(welcomePanel.getWidth(), welcomePanel.getHeight());
+		frame.getContentPane().add(welcomePanel);
+		welcomePanel.setLayout(null);
+		
+				ID = new JTextField();
+				ID.setBounds(567, 274, 283, 64);
+				ID.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+				ID.setToolTipText("");
+				welcomePanel.add(ID);
+				ID.setColumns(10);
+				ID.setBorder(new LineBorder(Color.white, 1));
+				
+						PW = new JPasswordField();
+						PW.setBounds(567, 370, 283, 64);
+						PW.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
+						PW.setToolTipText("");
+						welcomePanel.add(PW);
+						PW.setBorder(new LineBorder(Color.white, 1));
+						JButton btnNewButton = new JButton("");
+						btnNewButton.setContentAreaFilled(false);
+						btnNewButton.setBounds(704, 494, 136, 53);
+						welcomePanel.add(btnNewButton);
+						
+								JButton btnNewButton_3 = new JButton("");
+								btnNewButton_3.setContentAreaFilled(false);
+								btnNewButton_3.setBackground(Color.LIGHT_GRAY);
+								btnNewButton_3.addActionListener(new ActionListener() {
+									public void actionPerformed(ActionEvent e) {
+										joinpanel.setVisible(true);
+										welcomePanel.setVisible(false);
+									}
+								});
+								btnNewButton_3.setFont(new Font("MV Boli", Font.PLAIN, 20));
+								btnNewButton_3.setBounds(510, 494, 136, 53);
+								welcomePanel.add(btnNewButton_3);
+								
+										// JPanel mainpanel = new JPanel();
+										// mainpanel.setBounds(0, 0, 10, 10);
+										// frame.getContentPane().add(mainpanel);
+										btnNewButton.addActionListener(new ActionListener() {
+											@Override
+											public void actionPerformed(ActionEvent e) {
+												// TODO Auto-generated method stub
+												String name = ID.getText();
+												StringBuilder sbf = new StringBuilder("");
+												char[] pass = PW.getPassword();
+												sbf.append(pass); // char[] -> String
+								
+												if (User.CheckUser(name, sbf.toString())) {
+													JOptionPane.showMessageDialog(null, "success");
+													welcomePanel.setVisible(false);
+													joinpanel.setVisible(false);
+													mainpanel.setVisible(true);
+												} else {
+													JOptionPane.showMessageDialog(null, "fail");
+												}
+								
+											}
+										});
 		frame.setJMenuBar(menuBar());
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -262,7 +271,9 @@ public class Customer_App {
 		return bar;
 	}
 }
-
+class check extends Guestlist{
+	
+}
 class ImagePanel extends JPanel {
 	/**
 	 * 

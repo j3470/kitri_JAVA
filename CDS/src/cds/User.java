@@ -14,4 +14,8 @@ public class User {
 		return dao.checkUser(name, password);
 	}
 	
+	public static Boolean CheckID(String ID) {
+		return dao.checkUser(ID);
+	}
+	
 }
