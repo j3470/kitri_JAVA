@@ -85,7 +85,7 @@ public class signin {
 					JOptionPane.showMessageDialog(null, "뭐라도 좀 쳐라");
 				}
 				else {
-				Boolean isCreate = User.createUser(nameTxt, sbf.toString());
+				Boolean isCreate = true;/*User.createUser(nameTxt, sbf.toString());*/
 				
 				if(isCreate) {
 					System.out.println("create account");
