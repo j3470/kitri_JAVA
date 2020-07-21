@@ -78,101 +78,6 @@ public class Customer_App {
 		// welcomePanel.setBounds(0, 0, 1093, 659);
 
 		frame.setSize(joinpanel.getWidth(), joinpanel.getHeight());
-		frame.getContentPane().add(joinpanel);
-		joinpanel.setLayout(null);
-		
-				user = new JTextField();
-				user.setFont(new Font("굴림", Font.PLAIN, 20));
-				user.setColumns(10);
-				user.setBounds(664, 203, 357, 40);
-				user.setBorder(new LineBorder(Color.white, 1));
-				joinpanel.add(user);
-				
-						password = new JPasswordField();
-						password.setBounds(666, 267, 355, 40);
-						password.setBorder(new LineBorder(Color.white, 1));
-						joinpanel.add(password);
-						
-								username = new JTextField();
-								username.setFont(new Font("굴림", Font.PLAIN, 20));
-								username.setColumns(10);
-								username.setBorder(new LineBorder(Color.white, 1));
-								username.setBounds(664, 332, 357, 40);
-								joinpanel.add(username);
-								
-										JComboBox<?> usertype = new JComboBox<Object>(new String[] { "select", "instructor", "staff" });
-										usertype.setBackground(Color.WHITE);
-										usertype.setFont(new Font("굴림", Font.PLAIN, 20));
-										// usertype.setModel(new DefaultComboBoxModel(new String[] { "select",
-										// "student", "professor" }));
-										// JComboBox<?> gradeselect = new JComboBox<Object>(new String[] { "select",
-										// "1", "2", "3", "4" });
-										usertype.setBounds(664, 392, 357, 47);
-										usertype.setUI(new BasicComboBoxUI());
-										
-												joinpanel.add(usertype);
-												
-														phone = new JTextField();
-														phone.setFont(new Font("굴림", Font.PLAIN, 20));
-														phone.setColumns(10);
-														phone.setBorder(new LineBorder(Color.white, 1));
-														phone.setBounds(664, 460, 357, 40);
-														joinpanel.add(phone);
-														
-																email = new JTextField();
-																email.setFont(new Font("굴림", Font.PLAIN, 20));
-																email.setColumns(10);
-																email.setBorder(new LineBorder(Color.white, 1));
-																email.setBounds(664, 524, 357, 40);
-																joinpanel.add(email);
-																
-																		JButton signUp = new JButton("");
-																		signUp.setContentAreaFilled(false);
-																		signUp.addActionListener(new ActionListener() {
-																			public void actionPerformed(ActionEvent e) {
-																				// String nameTxt = user.getText();
-																				// String passTxt = password.getText();
-																				String userID = user.getText();
-																				StringBuilder sbf = new StringBuilder("");
-																				char[] passTxt = password.getPassword();
-																				String userName = username.getText();
-																				String userType = usertype.getSelectedItem().toString();
-																				String userPhone = phone.getText();
-																				String userEmail = email.getText();
-
-																				sbf.append(passTxt);
-																				if (userID.equals("") || sbf.toString().equals("") || userType.equals("select") || userName.equals("")
-																						|| userEmail.equals("")) {
-																					JOptionPane.showMessageDialog(null, "양식에 맞게 작성해주세요");
-																				} else {
-																					Boolean isCreate = User.createUser(userID, sbf.toString(), userType, userName, userEmail,
-																							userPhone);
-																					if (isCreate) {
-																						JOptionPane.showMessageDialog(null, "가입완료!");
-																						System.out.println("success");
-																					} else {
-																						System.out.println("fail");
-																					}
-
-																				}
-																			}
-
-																		});
-																		signUp.setFont(new Font("굴림", Font.PLAIN, 20));
-																		signUp.setBounds(1036, 610, 173, 88);
-																		joinpanel.add(signUp);
-																		
-																				JButton backBtn = new JButton("");
-																				backBtn.addActionListener(new ActionListener() {
-																					public void actionPerformed(ActionEvent e) {
-																						joinpanel.setVisible(false);
-																						welcomePanel.setVisible(true);
-																					}
-																				});
-																				backBtn.setIcon(new ImageIcon("C:\\Users\\KITRI\\eclipse-workspace\\CDS\\image\\backicon.PNG"));
-																				backBtn.setBounds(93, 32, 77, 61);
-																				backBtn.setBorder(new LineBorder(Color.white, 1));
-																				joinpanel.add(backBtn);
 		JPanel mainpanel = new JPanel();
 		
 				mainpanel.setBackground(Color.WHITE);
@@ -333,6 +238,101 @@ public class Customer_App {
 																																												});
 																																												btnNewButton_4.setBounds(24, 22, 151, 34);
 																																												mainpanel.add(btnNewButton_4);
+		frame.getContentPane().add(joinpanel);
+		joinpanel.setLayout(null);
+		
+				user = new JTextField();
+				user.setFont(new Font("굴림", Font.PLAIN, 20));
+				user.setColumns(10);
+				user.setBounds(664, 203, 357, 40);
+				user.setBorder(new LineBorder(Color.white, 1));
+				joinpanel.add(user);
+				
+						password = new JPasswordField();
+						password.setBounds(666, 267, 355, 40);
+						password.setBorder(new LineBorder(Color.white, 1));
+						joinpanel.add(password);
+						
+								username = new JTextField();
+								username.setFont(new Font("굴림", Font.PLAIN, 20));
+								username.setColumns(10);
+								username.setBorder(new LineBorder(Color.white, 1));
+								username.setBounds(664, 332, 357, 40);
+								joinpanel.add(username);
+								
+										JComboBox<?> usertype = new JComboBox<Object>(new String[] { "select", "instructor", "staff" });
+										usertype.setBackground(Color.WHITE);
+										usertype.setFont(new Font("굴림", Font.PLAIN, 20));
+										// usertype.setModel(new DefaultComboBoxModel(new String[] { "select",
+										// "student", "professor" }));
+										// JComboBox<?> gradeselect = new JComboBox<Object>(new String[] { "select",
+										// "1", "2", "3", "4" });
+										usertype.setBounds(664, 392, 357, 47);
+										usertype.setUI(new BasicComboBoxUI());
+										
+												joinpanel.add(usertype);
+												
+														phone = new JTextField();
+														phone.setFont(new Font("굴림", Font.PLAIN, 20));
+														phone.setColumns(10);
+														phone.setBorder(new LineBorder(Color.white, 1));
+														phone.setBounds(664, 460, 357, 40);
+														joinpanel.add(phone);
+														
+																email = new JTextField();
+																email.setFont(new Font("굴림", Font.PLAIN, 20));
+																email.setColumns(10);
+																email.setBorder(new LineBorder(Color.white, 1));
+																email.setBounds(664, 524, 357, 40);
+																joinpanel.add(email);
+																
+																		JButton signUp = new JButton("");
+																		signUp.setContentAreaFilled(false);
+																		signUp.addActionListener(new ActionListener() {
+																			public void actionPerformed(ActionEvent e) {
+																				// String nameTxt = user.getText();
+																				// String passTxt = password.getText();
+																				String userID = user.getText();
+																				StringBuilder sbf = new StringBuilder("");
+																				char[] passTxt = password.getPassword();
+																				String userName = username.getText();
+																				String userType = usertype.getSelectedItem().toString();
+																				String userPhone = phone.getText();
+																				String userEmail = email.getText();
+
+																				sbf.append(passTxt);
+																				if (userID.equals("") || sbf.toString().equals("") || userType.equals("select") || userName.equals("")
+																						|| userEmail.equals("")) {
+																					JOptionPane.showMessageDialog(null, "양식에 맞게 작성해주세요");
+																				} else {
+																					Boolean isCreate = User.createUser(userID, sbf.toString(), userType, userName, userEmail,
+																							userPhone);
+																					if (isCreate) {
+																						JOptionPane.showMessageDialog(null, "가입완료!");
+																						System.out.println("success");
+																					} else {
+																						System.out.println("fail");
+																					}
+
+																				}
+																			}
+
+																		});
+																		signUp.setFont(new Font("굴림", Font.PLAIN, 20));
+																		signUp.setBounds(1036, 610, 173, 88);
+																		joinpanel.add(signUp);
+																		
+																				JButton backBtn = new JButton("");
+																				backBtn.addActionListener(new ActionListener() {
+																					public void actionPerformed(ActionEvent e) {
+																						joinpanel.setVisible(false);
+																						welcomePanel.setVisible(true);
+																					}
+																				});
+																				backBtn.setIcon(new ImageIcon("C:\\Users\\KITRI\\eclipse-workspace\\CDS\\image\\backicon.PNG"));
+																				backBtn.setBounds(93, 32, 77, 61);
+																				backBtn.setBorder(new LineBorder(Color.white, 1));
+																				joinpanel.add(backBtn);
 		frame.getContentPane().add(welcomePanel);
 		welcomePanel.setLayout(null);
 
